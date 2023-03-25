@@ -4,7 +4,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { SectionItems } from '../Header';
 import Section from '../Section';
-import { createCollapsingListStyles } from './styles';
+import { createCollapsingListStyles, createListTriggerStyles } from './styles';
 
 interface ExpandableListProps {
   name: string;
@@ -12,6 +12,7 @@ interface ExpandableListProps {
 }
 
 const CollapsingList = styled(Collapse)(createCollapsingListStyles);
+const ListTrigger = styled(Stack)(createListTriggerStyles);
 
 const ExpandableList = ({ name, items }: ExpandableListProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -22,11 +23,11 @@ const ExpandableList = ({ name, items }: ExpandableListProps) => {
 
   return (
     <Stack>
-      <Stack direction="row" onClick={onHandleClick}>
+      <ListTrigger onClick={onHandleClick}>
         <span>{name}</span>
 
         {icon}
-      </Stack>
+      </ListTrigger>
 
       <CollapsingList in={isOpen} timeout="auto" unmountOnExit>
         {items.map((item) => (
