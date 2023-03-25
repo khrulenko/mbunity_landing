@@ -1,4 +1,4 @@
-import { PropsWithTheme } from '../../common/types';
+import { PropsWithTheme } from '../../../common/types';
 
 const MuiCssBaseline = ({ theme: { palette } }: PropsWithTheme) => ({
   styleOverrides: {

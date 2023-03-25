@@ -1,5 +1,5 @@
 import { StackProps } from '@mui/system';
-import { StyleFunction } from '../../common/types';
+import { StyleFunction } from '../../../common/types';
 
 const createHeaderWrapperStyles: StyleFunction<StackProps> = () => {
   return {

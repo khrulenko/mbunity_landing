@@ -1,5 +1,5 @@
 import { CollapseProps, StackProps } from '@mui/material';
-import { StyleFunction } from '../../common/types';
+import { StyleFunction } from '../../../common/types';
 
 const createCollapsingListStyles: StyleFunction<CollapseProps> = () => {
   return {

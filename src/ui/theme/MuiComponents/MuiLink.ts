@@ -1,4 +1,4 @@
-import { PropsWithTheme } from '../../common/types';
+import { PropsWithTheme } from '../../../common/types';
 
 const MuiLink = {
   styleOverrides: {

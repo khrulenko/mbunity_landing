@@ -1,12 +1,7 @@
-import { Stack } from '@mui/system';
-import Header from './сomponents/Header';
+import AppRoutes from './routing/Routes';
 
 const App = () => {
-  return (
-    <Stack padding="40px 100px" alignItems="center">
-      <Header />
-    </Stack>
-  );
+  return <AppRoutes />;
 };
 
 export default App;
