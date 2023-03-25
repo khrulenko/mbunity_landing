@@ -9,10 +9,19 @@ import {
 } from './styles';
 import Section from '../Section';
 import LogoStub from '../LogoStub';
+import {
+  URL_HOME,
+  URL_BLOG,
+  URL_SHOP,
+  URL_ABOUT,
+  URL_CONTACT,
+  URL_PROFILE,
+  URL_CART,
+} from '../../../routing/URLs';
 
 export interface SectionItem {
   name: string;
-  path?: string;
+  url?: string;
   children?: SectionItems;
 }
 
@@ -24,27 +33,26 @@ const SectionsWrapper = styled(Stack)(createSectionsWrapperStyles);
 const IconsWrapper = styled(Stack)(createIconsWrapperStyles);
 
 const sections: SectionItems = [
-  { name: 'Home', path: 'home' },
+  { name: 'Home', url: URL_HOME },
   {
     name: 'Features',
     children: [
-      { name: 'One', path: 'one' },
+      { name: 'One', url: '/one' },
       {
         name: 'Two',
-        path: 'two',
         children: [
-          { name: 'N-One', path: 'one' },
-          { name: 'N-Two', path: 'two' },
-          { name: 'N-Three', path: 'three' },
+          { name: 'N-One', url: '/n_one' },
+          { name: 'N-Two', url: '/n_two' },
+          { name: 'N-Three', url: '/n_three' },
         ],
       },
-      { name: 'Three', path: 'three' },
+      { name: 'Three', url: 'three' },
     ],
   },
-  { name: 'Blog', path: 'blog' },
-  { name: 'Shop', path: 'shop' },
-  { name: 'About', path: 'about' },
-  { name: 'Contact', path: 'contact' },
+  { name: 'Blog', url: URL_BLOG },
+  { name: 'Shop', url: URL_SHOP },
+  { name: 'About', url: URL_ABOUT },
+  { name: 'Contact', url: URL_CONTACT },
 ];
 
 const Header = () => {
@@ -60,11 +68,11 @@ const Header = () => {
         </SectionsWrapper>
 
         <IconsWrapper>
-          <Link href={'profile'}>
+          <Link href={URL_PROFILE}>
             <AccountCircleOutlinedIcon />
           </Link>
 
-          <Link href={'cart'}>
+          <Link href={URL_CART}>
             <ShoppingCartOutlinedIcon />
           </Link>
         </IconsWrapper>
