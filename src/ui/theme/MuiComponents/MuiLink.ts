@@ -1,8 +1,9 @@
+import { LinkProps } from '@mui/material';
 import { PropsWithTheme } from '../../../common/types';
 
 const MuiLink = {
   styleOverrides: {
-    root: ({ theme: { palette } }: PropsWithTheme) => ({
+    root: ({ theme: { palette } }: PropsWithTheme<LinkProps>) => ({
       position: 'relative',
 
       display: 'flex',

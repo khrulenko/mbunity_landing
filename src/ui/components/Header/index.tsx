@@ -1,11 +1,17 @@
-import { Stack, styled, Link } from '@mui/material';
+import { Stack, styled, Link, StackProps } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
   createHeaderWrapperStyles,
   createSectionsIconsWrapperStyles,
   createSectionsWrapperStyles,
   createIconsWrapperStyles,
+  createHeaderTogglerStyles,
+  createCloseMenuIconStyles,
+  createOpenMenuIconStyles,
+  createLogoCloseWrapperStyles,
 } from './styles';
 import Section from '../Section';
 import LogoStub from '../LogoStub';
@@ -18,6 +24,8 @@ import {
   URL_PROFILE,
   URL_CART,
 } from '../../../routing/URLs';
+import { useState } from 'react';
+import { AnyFunction } from '../../../common/types';
 
 export interface SectionItem {
   name: string;
@@ -27,10 +35,22 @@ export interface SectionItem {
 
 export type SectionItems = SectionItem[];
 
+export type SectionsIconsWrapperProps = StackProps & {
+  isMenuShown: boolean;
+};
+
+export type HeaderTogglerProps = StackProps & {
+  onClick?: AnyFunction;
+};
+
 const HeaderWrapper = styled(Stack)(createHeaderWrapperStyles);
 const SectionsIconsWrapper = styled(Stack)(createSectionsIconsWrapperStyles);
 const SectionsWrapper = styled(Stack)(createSectionsWrapperStyles);
 const IconsWrapper = styled(Stack)(createIconsWrapperStyles);
+const ShowOnMobile = styled(Stack)(createHeaderTogglerStyles);
+const CloseMenuIcon = styled(CloseIcon)(createCloseMenuIconStyles);
+const OpenMenuIcon = styled(MenuIcon)(createOpenMenuIconStyles);
+const LogoCloseWrapper = styled(Stack)(createLogoCloseWrapperStyles);
 
 const sections: SectionItems = [
   { name: 'Home', url: URL_HOME },
@@ -40,11 +60,7 @@ const sections: SectionItems = [
       { name: 'One', url: '/one' },
       {
         name: 'Two',
-        children: [
-          { name: 'N-One', url: '/n_one' },
-          { name: 'N-Two', url: '/n_two' },
-          { name: 'N-Three', url: '/n_three' },
-        ],
+        url: '/two',
       },
       { name: 'Three', url: 'three' },
     ],
@@ -56,12 +72,25 @@ const sections: SectionItems = [
 ];
 
 const Header = () => {
+  const [isMenuShown, setIsHeaderShown] = useState<boolean>(false);
+
+  const toggleHeader = () =>
+    setIsHeaderShown((isHeaderShown) => !isHeaderShown);
+
   return (
     <HeaderWrapper>
       <LogoStub />
 
-      <SectionsIconsWrapper>
+      <SectionsIconsWrapper isMenuShown={isMenuShown}>
         <SectionsWrapper>
+          <ShowOnMobile>
+            <LogoCloseWrapper>
+              <LogoStub color="text.light" />
+
+              <CloseMenuIcon onClick={toggleHeader} />
+            </LogoCloseWrapper>
+          </ShowOnMobile>
+
           {sections.map((section) => (
             <Section key={section.name} section={section} />
           ))}
@@ -77,6 +106,12 @@ const Header = () => {
           </Link>
         </IconsWrapper>
       </SectionsIconsWrapper>
+
+      {!isMenuShown && (
+        <ShowOnMobile>
+          <OpenMenuIcon onClick={toggleHeader} />
+        </ShowOnMobile>
+      )}
     </HeaderWrapper>
   );
 };

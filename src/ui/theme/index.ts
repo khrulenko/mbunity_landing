@@ -1,20 +1,24 @@
-import { createTheme, PaletteOptions, ThemeOptions } from '@mui/material';
+import { createTheme, ThemeOptions } from '@mui/material';
 import MuiCssBaseline from './MuiComponents/MuiCssBaseline';
 import MuiLink from './MuiComponents/MuiLink';
 
-type CustomPalette = PaletteOptions & {
-  text: {
+declare module '@mui/material/styles' {
+  interface TypeText {
     header: string;
-  };
-};
+    secondaryDark: string;
+    light: string;
+  }
+}
 
-const palette: CustomPalette = {
+const palette = {
   background: {
-    default: '#F5F5F5',
+    default: '#FBFBFB',
   },
   text: {
     primary: '#000000',
     header: '#1F1F1F',
+    secondaryDark: '#F5F5F5',
+    light: '#FFFFFF',
   },
 };
 

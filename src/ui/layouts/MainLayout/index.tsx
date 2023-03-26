@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 
 const MainLayout = () => {
   return (
-    <Stack padding="40px 100px" alignItems="center">
+    <Stack alignItems="center">
       <Header />
 
       <Outlet />

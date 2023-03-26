@@ -1,10 +1,9 @@
 import { CollapseProps, StackProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createCollapsingListStyles: StyleFunction<CollapseProps> = () => {
+const createExpandableListWrapperStyles: StyleFunction<CollapseProps> = () => {
   return {
-    position: 'relative',
-    left: '10%',
+    width: 'fit-content',
   };
 };
 
@@ -34,4 +33,15 @@ const createListTriggerStyles: StyleFunction<StackProps> = () => {
   };
 };
 
-export { createCollapsingListStyles, createListTriggerStyles };
+const createCollapsingListStyles: StyleFunction<CollapseProps> = () => {
+  return {
+    position: 'relative',
+    left: '10%',
+  };
+};
+
+export {
+  createExpandableListWrapperStyles,
+  createCollapsingListStyles,
+  createListTriggerStyles,
+};

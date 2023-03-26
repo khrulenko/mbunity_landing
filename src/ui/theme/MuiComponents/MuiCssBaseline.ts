@@ -1,6 +1,6 @@
-import { PropsWithTheme } from '../../../common/types';
+import { Theme } from '@mui/material';
 
-const MuiCssBaseline = ({ theme: { palette } }: PropsWithTheme) => ({
+const MuiCssBaseline = ({ theme: { palette } }: { theme: Theme }) => ({
   styleOverrides: {
     body: {
       minHeight: '100vh',

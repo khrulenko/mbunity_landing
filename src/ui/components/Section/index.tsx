@@ -1,11 +1,14 @@
 import { useLocation } from 'react-router-dom';
-import { Link } from '@mui/material';
+import { Link, styled } from '@mui/material';
 import ExpandableList from '../ExpandableList';
 import { SectionItem } from '../Header';
+import { createLinkSectionStyles } from './styles';
 
 interface SectionProps {
   section: SectionItem;
 }
+
+const LinkSection = styled(Link)(createLinkSectionStyles);
 
 const Section = ({ section }: SectionProps) => {
   const { name, url, children } = section;
@@ -17,7 +20,7 @@ const Section = ({ section }: SectionProps) => {
   return hasChildren ? (
     <ExpandableList name={name} items={children} />
   ) : (
-    <Link href={url}>{isChosen ? <b>{name}</b> : name}</Link>
+    <LinkSection href={url}>{isChosen ? <b>{name}</b> : name}</LinkSection>
   );
 };
 
