@@ -23,7 +23,7 @@ const createHeaderWrapperStyles: StyleFunction<StackProps> = ({
       padding: '28px 20px',
 
       borderBottom: '1px solid',
-      borderBottomColor: palette.text.secondaryDark,
+      borderBottomColor: palette.divider,
     },
   };
 };

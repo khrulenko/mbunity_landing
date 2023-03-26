@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
     header: string;
     secondaryDark: string;
     light: string;
+    secondaryLight: string;
   }
 }
 
@@ -17,9 +18,11 @@ const palette = {
   text: {
     primary: '#000000',
     header: '#1F1F1F',
-    secondaryDark: '#F5F5F5',
+    secondaryDark: '#717171',
     light: '#FFFFFF',
+    secondaryLight: '#C9C9C9',
   },
+  divider: '#F5F5F5',
 };
 
 const theme = createTheme({
