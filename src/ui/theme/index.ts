@@ -1,5 +1,6 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 import MuiCssBaseline from './MuiComponents/MuiCssBaseline';
+import MuiTextField from './MuiComponents/MuiTextField';
 
 declare module '@mui/material/styles' {
   interface TypeText {
@@ -7,6 +8,7 @@ declare module '@mui/material/styles' {
     secondaryDark: string;
     light: string;
     secondaryLight: string;
+    label: string;
   }
 }
 
@@ -20,6 +22,7 @@ const palette = {
     secondaryDark: '#717171',
     light: '#FFFFFF',
     secondaryLight: '#C9C9C9',
+    label: '#8D8D8D',
   },
   divider: '#F5F5F5',
 };
@@ -28,6 +31,7 @@ const theme = createTheme({
   palette,
   components: {
     MuiCssBaseline,
+    MuiTextField,
   },
 } as ThemeOptions);
 

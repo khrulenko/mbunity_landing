@@ -1,5 +1,6 @@
 import { Stack, styled, Typography } from '@mui/material';
 import {
+  createContactPageWrapperStyles,
   createContactPageHeaderStyles,
   createContactPageDescriptionStyles,
   createContactInfoWrapperStyles,
@@ -9,7 +10,9 @@ import {
 } from './styles';
 import ContactList from '../../components/ContactsList';
 import IconLinksList from '../../components/IconLinksList';
+import ContactForm from '../../components/ContactForm';
 
+const ContactPageWrapper = styled(Stack)(createContactPageWrapperStyles);
 const ContactPageHeader = styled(Typography)(createContactPageHeaderStyles);
 const ContactPageDescription = styled(Typography)(
   createContactPageDescriptionStyles
@@ -23,7 +26,7 @@ const ContentWrapper = styled(Stack)(createContentWrapperStyles);
 
 const ContactPage = () => {
   return (
-    <Stack gap="50px">
+    <ContactPageWrapper>
       <Stack>
         <ContactPageHeader>Contact Us</ContactPageHeader>
 
@@ -46,8 +49,10 @@ const ContactPage = () => {
 
           <IconLinksList />
         </ContactInfoWrapper>
+
+        <ContactForm />
       </ContentWrapper>
-    </Stack>
+    </ContactPageWrapper>
   );
 };
 

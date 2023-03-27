@@ -14,7 +14,7 @@ const MainLayout = () => {
       <Header />
 
       {/* TODO: create content wrapper from this stack */}
-      <Stack padding="35px 0 50px 0">
+      <Stack padding="35px 0 50px 0" width="100%" alignItems="center">
         <Outlet />
       </Stack>
 
