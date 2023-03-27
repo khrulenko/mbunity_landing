@@ -1,6 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 import MuiCssBaseline from './MuiComponents/MuiCssBaseline';
-import MuiLink from './MuiComponents/MuiLink';
 
 declare module '@mui/material/styles' {
   interface TypeText {
@@ -29,7 +28,6 @@ const theme = createTheme({
   palette,
   components: {
     MuiCssBaseline,
-    MuiLink,
   },
 } as ThemeOptions);
 

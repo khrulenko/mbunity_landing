@@ -1,4 +1,4 @@
-import { Stack, styled, Link, StackProps } from '@mui/material';
+import { Stack, styled, StackProps } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -26,6 +26,7 @@ import {
 } from '../../../routing/URLs';
 import { useState } from 'react';
 import { AnyFunction } from '../../../common/types';
+import HeaderLink from '../HeaderLink';
 
 export interface SectionItem {
   name: string;
@@ -97,13 +98,13 @@ const Header = () => {
         </SectionsWrapper>
 
         <IconsWrapper>
-          <Link href={URL_PROFILE}>
+          <HeaderLink url={URL_PROFILE}>
             <AccountCircleOutlinedIcon />
-          </Link>
+          </HeaderLink>
 
-          <Link href={URL_CART}>
+          <HeaderLink url={URL_CART}>
             <ShoppingCartOutlinedIcon />
-          </Link>
+          </HeaderLink>
         </IconsWrapper>
       </SectionsIconsWrapper>
 
