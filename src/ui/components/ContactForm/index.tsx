@@ -7,6 +7,7 @@ import {
   RadioGroup,
   Radio,
   FormControlLabel,
+  Button,
 } from '@mui/material';
 import {
   createFormWrapperStyles,
@@ -22,7 +23,7 @@ const FieldsWrapper = styled(Stack)(createFieldsWrapperStyles);
 const RadioHeader = styled(Typography)(createRadioHeaderStyles);
 const RadioGroupWrapper = styled(RadioGroup)(createRadioGroupWrapperStyles);
 
-const REGEXP_TEXT = /^[a-z]{0,30}$/;
+const REGEXP_TEXT = /^[a-z]{0,30}$/i;
 const REGEXP_PHONE = /^\+?[0-9]{0,12}$/;
 
 const processOnChange =
@@ -54,6 +55,19 @@ const ContactForm = () => {
   const onPhoneChange = processOnChange(setPhone, REGEXP_PHONE);
   const onMessageChange = processOnChange(setMessage);
   const onSubjectChange = processOnChange(setSubject);
+
+  const onSubmit = () => {
+    const data = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      message,
+      subject,
+    };
+
+    console.log('Here is a message and user data:', data);
+  };
 
   return (
     <FormWrapper>
@@ -126,6 +140,10 @@ const ContactForm = () => {
         label="Message"
         placeholder="Write your message.."
       />
+
+      <Button variant="contained" onClick={onSubmit}>
+        Send Message
+      </Button>
     </FormWrapper>
   );
 };
