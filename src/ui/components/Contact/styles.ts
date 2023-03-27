@@ -1,4 +1,4 @@
-import { StackProps } from '@mui/system';
+import { StackProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
 const createContactWrapperStyles: StyleFunction<StackProps> = () => {

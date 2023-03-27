@@ -1,6 +1,8 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 import MuiCssBaseline from './MuiComponents/MuiCssBaseline';
 import MuiTextField from './MuiComponents/MuiTextField';
+import MuiFormControlLabel from './MuiComponents/MuiFormControlLabel';
+import MuiRadio from './MuiComponents/MuiRadio';
 
 declare module '@mui/material/styles' {
   interface TypeText {
@@ -32,6 +34,8 @@ const theme = createTheme({
   components: {
     MuiCssBaseline,
     MuiTextField,
+    MuiFormControlLabel,
+    MuiRadio,
   },
 } as ThemeOptions);
 
