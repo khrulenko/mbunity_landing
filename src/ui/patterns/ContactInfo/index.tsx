@@ -1,6 +1,6 @@
 import { Stack, styled, Typography } from '@mui/material';
-import ContactList from '../ContactsList';
-import IconLinksList from '../IconLinksList';
+import ContactList from '../../components/ContactsList';
+import IconLinksList from '../../components/IconLinksList';
 import {
   createContactInfoWrapperStyles,
   createContactInfoDescriptionStyles,

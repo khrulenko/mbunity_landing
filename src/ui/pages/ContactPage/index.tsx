@@ -5,8 +5,8 @@ import {
   createContactPageDescriptionStyles,
   createContentWrapperStyles,
 } from './styles';
-import ContactForm from '../../components/ContactForm';
-import ContactInfo from '../../components/ContactInfo';
+import ContactForm from '../../patterns/ContactForm';
+import ContactInfo from '../../patterns/ContactInfo';
 
 const ContactPageWrapper = styled(Stack)(createContactPageWrapperStyles);
 const ContactPageHeader = styled(Typography)(createContactPageHeaderStyles);

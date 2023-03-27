@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import ExpandableList from '../ExpandableList';
-import { SectionItem } from '../Header';
+import { SectionItem } from '../../patterns/Header';
 import HeaderLink from '../HeaderLink';
 
 interface SectionProps {

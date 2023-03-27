@@ -16,7 +16,7 @@ import {
   createRadioGroupWrapperStyles,
 } from './styles';
 import { AnyFunction } from '../../../common/types';
-import RadioController from '../RadioController';
+import RadioController from '../../components/RadioController';
 
 const FormWrapper = styled(Stack)(createFormWrapperStyles);
 const FieldsWrapper = styled(Stack)(createFieldsWrapperStyles);

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Stack } from '@mui/material';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../patterns/Header';
+import Footer from '../../patterns/Footer';
 
 const MainLayout = () => {
   return (

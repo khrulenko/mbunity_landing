@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Stack, Collapse, styled } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { SectionItems } from '../Header';
+import { SectionItems } from '../../patterns/Header';
 import Section from '../Section';
 import {
   createExpandableListWrapperStyles,

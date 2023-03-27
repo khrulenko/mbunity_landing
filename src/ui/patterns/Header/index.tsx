@@ -13,8 +13,8 @@ import {
   createOpenMenuIconStyles,
   createLogoCloseWrapperStyles,
 } from './styles';
-import Section from '../Section';
-import LogoStub from '../LogoStub';
+import Section from '../../components/Section';
+import LogoStub from '../../components/LogoStub';
 import {
   URL_HOME,
   URL_BLOG,
@@ -26,7 +26,7 @@ import {
 } from '../../../routing/URLs';
 import { useState } from 'react';
 import { AnyFunction } from '../../../common/types';
-import HeaderLink from '../HeaderLink';
+import HeaderLink from '../../components/HeaderLink';
 
 export interface SectionItem {
   name: string;
