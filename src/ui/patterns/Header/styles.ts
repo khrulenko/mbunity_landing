@@ -41,6 +41,7 @@ const createSectionsIconsWrapperStyles: StyleFunction<
 }) => {
   return {
     flexDirection: 'row',
+    alignItems: 'center',
     gap: '60px',
 
     width: '100%',

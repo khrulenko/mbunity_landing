@@ -1,6 +1,4 @@
-import { Stack, styled, StackProps } from '@mui/material';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Stack, styled, StackProps, useMediaQuery, Theme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import {
@@ -27,6 +25,10 @@ import {
 import { useState } from 'react';
 import { AnyFunction } from '../../../common/types';
 import HeaderLink from '../../components/HeaderLink';
+import { ReactComponent as ProfileIcon } from './profile.svg';
+import { ReactComponent as CartIcon } from './cart.svg';
+import { ReactComponent as ProfileLightIcon } from './profile_light.svg';
+import { ReactComponent as CartLightIcon } from './cart_light.svg';
 
 export interface SectionItem {
   name: string;
@@ -74,6 +76,9 @@ const sections: SectionItems = [
 
 const Header = () => {
   const [isMenuShown, setIsHeaderShown] = useState<boolean>(false);
+  const isMobile = useMediaQuery(({ breakpoints: { down } }: Theme) =>
+    down('md')
+  );
 
   const toggleHeader = () =>
     setIsHeaderShown((isHeaderShown) => !isHeaderShown);
@@ -99,11 +104,11 @@ const Header = () => {
 
         <IconsWrapper>
           <HeaderLink url={URL_PROFILE}>
-            <AccountCircleOutlinedIcon />
+            {isMobile ? <ProfileLightIcon /> : <ProfileIcon />}
           </HeaderLink>
 
           <HeaderLink url={URL_CART}>
-            <ShoppingCartOutlinedIcon />
+            {isMobile ? <CartLightIcon /> : <CartIcon />}
           </HeaderLink>
         </IconsWrapper>
       </SectionsIconsWrapper>
