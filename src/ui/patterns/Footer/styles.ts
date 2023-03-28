@@ -1,7 +1,11 @@
 import { StackProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createFooterWrapperStyles: StyleFunction<StackProps> = () => {
+const createFooterWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     textAlign: 'center',
     alignItems: 'center',
@@ -13,28 +17,56 @@ const createFooterWrapperStyles: StyleFunction<StackProps> = () => {
 
     color: 'white',
     backgroundColor: 'black',
+
+    [down('lg')]: {
+      gap: '20px',
+
+      padding: '20px 20px 35px',
+    },
   };
 };
 
-const createFooterContentWrapperStyles: StyleFunction<StackProps> = () => {
+const createFooterContentWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: '20px',
 
     padding: '30px',
     width: '100%',
 
     borderTop: '1px solid',
     borderColor: 'text.light',
+
+    [down('md')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '40px',
+
+      padding: '30px 0',
+    },
   };
 };
 
-const createInnerContentWrapperStyles: StyleFunction<StackProps> = () => {
+const createInnerContentWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    gap: '20px',
 
     width: '100%',
+
+    [down('lg')]: {
+      justifyContent: 'space-between',
+    },
   };
 };
 

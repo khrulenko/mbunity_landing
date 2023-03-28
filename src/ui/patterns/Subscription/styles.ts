@@ -1,7 +1,11 @@
 import { StackProps, TypographyProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createSubscribeWrapperStyles: StyleFunction<StackProps> = () => {
+const createSubscribeWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     justifyContent: 'space-between',
 
@@ -12,6 +16,10 @@ const createSubscribeWrapperStyles: StyleFunction<StackProps> = () => {
 
     backgroundColor: '#131313',
     borderRadius: '10px',
+
+    [down('md')]: {
+      maxWidth: '100%',
+    },
   };
 };
 

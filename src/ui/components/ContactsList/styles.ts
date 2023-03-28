@@ -8,13 +8,19 @@ const createContactsListWrapperStyles: StyleFunction<
     breakpoints: { down },
   },
   gap,
+  alignStyle,
 }) => {
+  const isLeft = alignStyle === 'left';
+
   return {
     gap,
 
     [down('md')]: {
-      alignItems: 'center',
+      alignItems: isLeft ? 'start' : 'center',
       gap: '15px',
+
+      maxWidth: isLeft ? '145px' : '100%',
+      textAlign: isLeft ? 'left' : 'center',
     },
   };
 };

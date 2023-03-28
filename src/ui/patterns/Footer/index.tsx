@@ -57,7 +57,7 @@ const Footer = () => {
           <FooterContactsWrapper>
             <LinksListHeader>Reach us</LinksListHeader>
 
-            <ContactsList gap="24px" />
+            <ContactsList gap="24px" alignStyle="left" />
           </FooterContactsWrapper>
 
           <LinksList header="Company" items={companyLinks} />

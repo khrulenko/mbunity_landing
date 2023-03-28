@@ -7,20 +7,25 @@ import { createContactsListWrapperStyles } from './styles';
 
 interface ContactsListProps {
   gap?: string;
+  alignStyle?: string;
 }
 
 export type ContactsListWrapperProps = ContactsListProps & StackProps;
 
 const ContactsListWrapper = styled(Stack)(createContactsListWrapperStyles);
 
-const ContactsList = ({ gap = '50px' }: ContactsListProps) => {
+const ContactsList = ({ gap = '50px', alignStyle }: ContactsListProps) => {
   return (
-    <ContactsListWrapper gap={gap}>
-      <Contact Icon={PhoneInTalkIcon}>+1012 3456 789</Contact>
+    <ContactsListWrapper gap={gap} alignStyle={alignStyle}>
+      <Contact Icon={PhoneInTalkIcon} alignStyle={alignStyle}>
+        +1012 3456 789
+      </Contact>
 
-      <Contact Icon={EmailIcon}>demo@gmail.com</Contact>
+      <Contact Icon={EmailIcon} alignStyle={alignStyle}>
+        demo@gmail.com
+      </Contact>
 
-      <Contact Icon={LocationOnIcon}>
+      <Contact Icon={LocationOnIcon} alignStyle={alignStyle}>
         132 Dartmouth Street Boston, Massachusetts 02156 United States
       </Contact>
     </ContactsListWrapper>

@@ -1,11 +1,14 @@
-import { StackProps, TypographyProps } from '@mui/material';
+import { ContactTextProps, ContactWrapperProps } from '.';
 import { StyleFunction } from '../../../common/types';
 
-const createContactWrapperStyles: StyleFunction<StackProps> = ({
+const createContactWrapperStyles: StyleFunction<ContactWrapperProps> = ({
   theme: {
     breakpoints: { down },
   },
+  alignStyle,
 }) => {
+  const isLeft = alignStyle === 'left';
+
   return {
     flexDirection: 'row',
     gap: '25px',
@@ -14,25 +17,28 @@ const createContactWrapperStyles: StyleFunction<StackProps> = ({
 
     [down('md')]: {
       flexDirection: 'column',
-      alignItems: 'center',
+      alignItems: isLeft ? 'start' : 'center',
       gap: '10px',
     },
   };
 };
 
-const createContactTextStyles: StyleFunction<TypographyProps> = ({
+const createContactTextStyles: StyleFunction<ContactTextProps> = ({
   theme: {
     palette,
     breakpoints: { down },
   },
+  alignStyle,
 }) => {
+  const isLeft = alignStyle === 'left';
+
   return {
     textAlign: 'left',
     fontSize: '16px',
     color: palette.text.light,
 
     [down('md')]: {
-      textAlign: 'center',
+      textAlign: isLeft ? 'left' : 'center',
       fontSize: '14px',
       lineHeight: '18px',
     },
