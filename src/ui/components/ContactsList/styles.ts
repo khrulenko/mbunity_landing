@@ -1,13 +1,16 @@
-import { StackProps } from '@mui/material';
+import { ContactsListWrapperProps } from '.';
 import { StyleFunction } from '../../../common/types';
 
-const createContactsListWrapperStyles: StyleFunction<StackProps> = ({
+const createContactsListWrapperStyles: StyleFunction<
+  ContactsListWrapperProps
+> = ({
   theme: {
     breakpoints: { down },
   },
+  gap,
 }) => {
   return {
-    gap: '50px',
+    gap,
 
     [down('md')]: {
       alignItems: 'center',

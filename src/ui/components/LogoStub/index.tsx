@@ -1,13 +1,14 @@
 import { Typography } from '@mui/material';
 
 interface LogoStub {
-  color: string;
+  color?: string;
+  fontSize?: string;
 }
 
-const LogoStub = ({ color = 'text.primary' }) => {
+const LogoStub = ({ color = 'text.primary', fontSize = '24px' }) => {
   return (
     <Typography
-      fontSize="24px"
+      fontSize={fontSize}
       fontWeight="800"
       lineHeight="32px"
       color={color}

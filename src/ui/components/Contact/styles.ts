@@ -27,6 +27,7 @@ const createContactTextStyles: StyleFunction<TypographyProps> = ({
   },
 }) => {
   return {
+    textAlign: 'left',
     fontSize: '16px',
     color: palette.text.light,
 
