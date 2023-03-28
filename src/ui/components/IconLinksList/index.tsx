@@ -18,7 +18,7 @@ const IconLinksList = () => {
         <InstagramIcon />
       </IconLink>
 
-      <IconLink title="Discord" href="https://discord.com.ua/">
+      <IconLink title="Discord" href="https://discord.com/">
         <Discord />
       </IconLink>
     </IconLinksListWrapper>
