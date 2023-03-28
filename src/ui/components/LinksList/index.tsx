@@ -25,7 +25,9 @@ const LinksList = ({ header, items }: LinksListProps) => {
 
       <ContentWrapper>
         {items.map(({ url = '', name }) => (
-          <FooterLink to={url}>{name}</FooterLink>
+          <FooterLink to={url} key={url}>
+            {name}
+          </FooterLink>
         ))}
       </ContentWrapper>
     </LinksListWrapper>
