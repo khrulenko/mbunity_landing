@@ -17,14 +17,16 @@ const createIconLinkWrapperStyles: StyleFunction<LinkProps> = () => {
     borderRadius: '50%',
 
     svg: {
-      fontSize: '20px',
+      width: '15px',
+      height: '15px',
+      fill: 'white',
     },
 
     ':hover': {
       backgroundColor: 'white',
 
       svg: {
-        color: 'black',
+        fill: 'black',
       },
     },
   };

@@ -1,9 +1,9 @@
 import { Stack, styled } from '@mui/material';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import SmartToyIcon from '@mui/icons-material/SmartToy';
 import IconLink from '../IconLink';
 import { createIconLinksListWrapperStyles } from './styles';
+import { ReactComponent as Discord } from './discord.svg';
 
 const IconLinksListWrapper = styled(Stack)(createIconLinksListWrapperStyles);
 
@@ -18,8 +18,8 @@ const IconLinksList = () => {
         <InstagramIcon />
       </IconLink>
 
-      <IconLink title="Discort" href="https://discord.com.ua/">
-        <SmartToyIcon />
+      <IconLink title="Discord" href="https://discord.com.ua/">
+        <Discord />
       </IconLink>
     </IconLinksListWrapper>
   );
