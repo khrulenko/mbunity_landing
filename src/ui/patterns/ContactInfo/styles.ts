@@ -7,6 +7,7 @@ const createContactInfoWrapperStyles: StyleFunction<StackProps> = ({
   },
 }) => {
   return {
+    position: 'relative',
     justifyContent: 'space-between',
 
     padding: '40px',
@@ -16,6 +17,8 @@ const createContactInfoWrapperStyles: StyleFunction<StackProps> = ({
 
     backgroundColor: 'black',
     borderRadius: '10px',
+
+    overflow: 'hidden',
 
     '& svg': {
       color: 'white',
@@ -66,8 +69,61 @@ const createContactInfoDescriptionStyles: StyleFunction<TypographyProps> = ({
   };
 };
 
+const createSmallCircleStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
+  return {
+    position: 'absolute',
+    left: '60%',
+    top: '70%',
+
+    width: '138px',
+    height: '138px',
+
+    backgroundColor: 'rgba(72, 72, 72, 0.5)',
+    borderRadius: '50%',
+
+    [down('md')]: {
+      left: '80%',
+      top: '75%',
+
+      width: '54px',
+      height: '54px',
+    },
+  };
+};
+
+const createLargeCircleStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
+  return {
+    position: 'absolute',
+    left: '70%',
+    top: '75%',
+
+    width: '269px',
+    height: '269px',
+
+    backgroundColor: 'rgba(72, 72, 72, 0.5)',
+    borderRadius: '50%',
+
+    [down('md')]: {
+      left: '80%',
+
+      width: '192px',
+      height: '192px',
+    },
+  };
+};
+
 export {
   createContactInfoWrapperStyles,
   createContactInfoHeaderStyles,
   createContactInfoDescriptionStyles,
+  createSmallCircleStyles,
+  createLargeCircleStyles,
 };

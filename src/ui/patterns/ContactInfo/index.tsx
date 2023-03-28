@@ -5,6 +5,8 @@ import {
   createContactInfoWrapperStyles,
   createContactInfoDescriptionStyles,
   createContactInfoHeaderStyles,
+  createSmallCircleStyles,
+  createLargeCircleStyles,
 } from './styles';
 
 const ContactInfoWrapper = styled(Stack)(createContactInfoWrapperStyles);
@@ -12,6 +14,8 @@ const ContactInfoHeader = styled(Typography)(createContactInfoHeaderStyles);
 const ContactInfoDescription = styled(Typography)(
   createContactInfoDescriptionStyles
 );
+const SmallCircle = styled(Stack)(createSmallCircleStyles);
+const LargeCircle = styled(Stack)(createLargeCircleStyles);
 
 const ContactInfo = () => {
   return (
@@ -27,6 +31,10 @@ const ContactInfo = () => {
       <ContactsList />
 
       <IconLinksList />
+
+      <SmallCircle />
+
+      <LargeCircle />
     </ContactInfoWrapper>
   );
 };
