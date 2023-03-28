@@ -1,7 +1,11 @@
 import { StackProps, TypographyProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createContactPageWrapperStyles: StyleFunction<StackProps> = () => {
+const createContactPageWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     display: 'flex',
     flexDirection: 'column',
@@ -9,27 +13,55 @@ const createContactPageWrapperStyles: StyleFunction<StackProps> = () => {
     gap: '50px',
 
     width: '100%',
+
+    [down('md')]: {
+      gap: '20px',
+
+      width: 'fit-content',
+    },
   };
 };
 
-const createContactPageHeaderStyles: StyleFunction<TypographyProps> = () => {
+const createContactPageHeaderStyles: StyleFunction<TypographyProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     textAlign: 'center',
     fontSize: '40px',
     fontWeight: '700',
+
+    [down('md')]: {
+      fontSize: '24px',
+    },
   };
 };
 
 const createContactPageDescriptionStyles: StyleFunction<TypographyProps> = ({
-  theme: { palette },
+  theme: {
+    palette,
+    breakpoints: { down },
+  },
 }) => {
   return {
     color: palette.text.secondaryDark,
     textAlign: 'center',
+    fontWeight: '500',
+
+    [down('md')]: {
+      maxWidth: '184px',
+
+      fontSize: '14px',
+    },
   };
 };
 
-const createContentWrapperStyles: StyleFunction<StackProps> = () => {
+const createContentWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     display: 'flex',
     flexDirection: 'row',
@@ -41,6 +73,12 @@ const createContentWrapperStyles: StyleFunction<StackProps> = () => {
 
     backgroundColor: 'white',
     borderRadius: '10px',
+
+    [down('md')]: {
+      flexDirection: 'column',
+
+      padding: '5px',
+    },
   };
 };
 

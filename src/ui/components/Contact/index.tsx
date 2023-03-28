@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Stack, styled, Typography } from '@mui/material';
-import { createContactWrapperStyles } from './styles';
+import { createContactWrapperStyles, createContactTextStyles } from './styles';
 
 interface ContactProps {
   Icon: FunctionComponent;
@@ -8,15 +8,14 @@ interface ContactProps {
 }
 
 const ContactWrapper = styled(Stack)(createContactWrapperStyles);
+const ContactText = styled(Typography)(createContactTextStyles);
 
 const Contact = ({ Icon, children }: ContactProps) => {
   return (
     <ContactWrapper>
       <Icon />
 
-      <Typography fontSize="16px" color="text.light">
-        {children}
-      </Typography>
+      <ContactText>{children}</ContactText>
     </ContactWrapper>
   );
 };

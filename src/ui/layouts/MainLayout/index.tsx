@@ -1,25 +1,26 @@
 import { Outlet } from 'react-router-dom';
-import { Stack } from '@mui/material';
+import { Stack, styled } from '@mui/material';
 import Header from '../../patterns/Header';
 import Footer from '../../patterns/Footer';
+import {
+  createMainLayoutWrapperStyles,
+  createPageWrapperStyles,
+} from './styles';
+
+const MainLayoutWrapper = styled(Stack)(createMainLayoutWrapperStyles);
+const PageWrapper = styled(Stack)(createPageWrapperStyles);
 
 const MainLayout = () => {
   return (
-    <Stack
-      direction="column"
-      alignItems="center"
-      justifyContent="space-between"
-      style={{ minHeight: '100vh' }}
-    >
+    <MainLayoutWrapper>
       <Header />
 
-      {/* TODO: create content wrapper from this stack */}
-      <Stack padding="35px 0 50px 0" width="100%" alignItems="center">
+      <PageWrapper>
         <Outlet />
-      </Stack>
+      </PageWrapper>
 
       <Footer />
-    </Stack>
+    </MainLayoutWrapper>
   );
 };
 

@@ -9,7 +9,10 @@ const MuiTextField = {
   },
   styleOverrides: {
     root: ({
-      theme: { palette },
+      theme: {
+        palette,
+        breakpoints: { down },
+      },
       ownerState,
     }: OwnerStateWithTheme<TextFieldProps>) => {
       const value = ownerState.value;
@@ -30,6 +33,11 @@ const MuiTextField = {
           '& .MuiInputLabel-root.Mui-focused': {
             color: value ? 'black' : palette.text.label,
             fontWeight: '500',
+
+            [down('md')]: {
+              fontSize: '12px',
+              lineHeight: '20px',
+            },
           },
 
           '&:hover': {

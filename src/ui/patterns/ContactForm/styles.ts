@@ -1,7 +1,11 @@
 import { StackProps, RadioGroupProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createFormWrapperStyles: StyleFunction<StackProps> = () => {
+const createFormWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     gap: '45px',
 
@@ -10,15 +14,46 @@ const createFormWrapperStyles: StyleFunction<StackProps> = () => {
     maxWidth: '676px',
 
     borderRadius: '10px',
+
+    [down('md')]: {
+      gap: '20px',
+
+      padding: '20px 21px',
+      maxWidth: '491px',
+    },
   };
 };
 
-const createFieldsWrapperStyles: StyleFunction<StackProps> = () => {
+const createFieldsWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: '40px',
+
+    [down('md')]: {
+      flexDirection: 'column',
+      gap: '20px',
+    },
+  };
+};
+
+const createSelectWrapperStyles: StyleFunction<StackProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
+  return {
+    gap: '14px',
+
+    [down('md')]: {
+      display: 'flex',
+      gap: '10px',
+    },
   };
 };
 
@@ -29,17 +64,26 @@ const createRadioHeaderStyles: StyleFunction<RadioGroupProps> = () => {
   };
 };
 
-const createRadioGroupWrapperStyles: StyleFunction<RadioGroupProps> = () => {
+const createRadioGroupWrapperStyles: StyleFunction<RadioGroupProps> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => {
   return {
     display: 'flex',
     flexDirection: 'row',
     gap: '20px',
+
+    [down('md')]: {
+      rowGap: '14px',
+    },
   };
 };
 
 export {
   createFormWrapperStyles,
   createFieldsWrapperStyles,
+  createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
 };

@@ -13,7 +13,6 @@ const ContactPageHeader = styled(Typography)(createContactPageHeaderStyles);
 const ContactPageDescription = styled(Typography)(
   createContactPageDescriptionStyles
 );
-
 const ContentWrapper = styled(Stack)(createContentWrapperStyles);
 
 const ContactPage = () => {

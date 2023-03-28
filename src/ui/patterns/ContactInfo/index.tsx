@@ -1,5 +1,5 @@
 import { Stack, styled, Typography } from '@mui/material';
-import ContactList from '../../components/ContactsList';
+import ContactsList from '../../components/ContactsList';
 import IconLinksList from '../../components/IconLinksList';
 import {
   createContactInfoWrapperStyles,
@@ -16,7 +16,7 @@ const ContactInfoDescription = styled(Typography)(
 const ContactInfo = () => {
   return (
     <ContactInfoWrapper>
-      <Stack>
+      <Stack gap="6px">
         <ContactInfoHeader>Contact Information</ContactInfoHeader>
 
         <ContactInfoDescription>
@@ -24,7 +24,7 @@ const ContactInfo = () => {
         </ContactInfoDescription>
       </Stack>
 
-      <ContactList />
+      <ContactsList />
 
       <IconLinksList />
     </ContactInfoWrapper>

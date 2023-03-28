@@ -24,6 +24,8 @@ const createHeaderWrapperStyles: StyleFunction<StackProps> = ({
 
       borderBottom: '1px solid',
       borderBottomColor: palette.divider,
+
+      zIndex: '1',
     },
   };
 };
@@ -58,13 +60,13 @@ const createSectionsIconsWrapperStyles: StyleFunction<
       flexDirection: 'column',
       justifyContent: 'space-between',
 
+      padding: '28px 20px',
       width: '100vw',
       maxWidth: '100vw',
       height: '100vh',
-      padding: '28px 20px',
 
-      backgroundColor: 'black',
       color: palette.text.light,
+      backgroundColor: 'black',
     },
   };
 };

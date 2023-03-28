@@ -12,6 +12,7 @@ import {
 import {
   createFormWrapperStyles,
   createFieldsWrapperStyles,
+  createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
 } from './styles';
@@ -20,6 +21,7 @@ import RadioController from '../../components/RadioController';
 
 const FormWrapper = styled(Stack)(createFormWrapperStyles);
 const FieldsWrapper = styled(Stack)(createFieldsWrapperStyles);
+const SelectWrapper = styled(Stack)(createSelectWrapperStyles);
 const RadioHeader = styled(Typography)(createRadioHeaderStyles);
 const RadioGroupWrapper = styled(RadioGroup)(createRadioGroupWrapperStyles);
 
@@ -103,7 +105,7 @@ const ContactForm = () => {
         />
       </FieldsWrapper>
 
-      <Stack spacing="14px">
+      <SelectWrapper>
         <RadioHeader>Select Subject?</RadioHeader>
 
         <RadioGroupWrapper value={subject} onChange={onSubjectChange}>
@@ -131,7 +133,7 @@ const ContactForm = () => {
             control={controlElement}
           />
         </RadioGroupWrapper>
-      </Stack>
+      </SelectWrapper>
 
       <TextField
         value={message}
@@ -141,9 +143,7 @@ const ContactForm = () => {
         placeholder="Write your message.."
       />
 
-      <Button variant="contained" onClick={onSubmit}>
-        Send Message
-      </Button>
+      <Button onClick={onSubmit}>Send Message</Button>
     </FormWrapper>
   );
 };
