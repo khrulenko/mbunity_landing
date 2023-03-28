@@ -18,13 +18,6 @@ const MuiButton = {
         padding: '15px 48px',
         maxWidth: '214px',
 
-        backgroundColor: 'black',
-        textTransform: 'capitalize',
-
-        ':hover': {
-          backgroundColor: 'grey',
-        },
-
         [down('md')]: {
           alignSelf: 'center',
 
@@ -39,12 +32,30 @@ const MuiButton = {
     },
     {
       props: { variant: 'contained', size: 'small' },
-      style: {},
+      style: {
+        padding: '12px 22px 10px',
+        maxWidth: '105px',
+
+        fontSize: '13px',
+
+        borderTopLeftRadius: '0',
+        borderBottomLeftRadius: '0',
+      },
     },
   ],
   styleOverrides: {
     root: ({}: OwnerStateWithTheme<ButtonProps>) => {
-      return {};
+      return {
+        width: '100%',
+
+        fontSize: '16px',
+        textTransform: 'capitalize',
+        backgroundColor: 'black',
+
+        ':hover': {
+          backgroundColor: 'grey',
+        },
+      };
     },
   },
 };

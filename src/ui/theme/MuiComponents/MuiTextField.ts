@@ -7,58 +7,87 @@ const MuiTextField = {
     focused: true,
     variant: 'standard',
   },
-  styleOverrides: {
-    root: ({
-      theme: {
-        palette,
-        breakpoints: { down },
+  variants: [
+    {
+      props: { variant: 'standard' },
+      style: ({
+        theme: {
+          palette,
+          breakpoints: { down },
+        },
+        ownerState,
+      }: OwnerStateWithTheme<TextFieldProps>) => {
+        const value = ownerState.value;
+
+        return {
+          '&.MuiTextField-root': {
+            borderBottom: '1px solid',
+            borderColor: palette.text.label,
+
+            '& .MuiInput-root': {
+              color: palette.text.label,
+
+              '&::before, &::after': {
+                display: 'none',
+              },
+            },
+
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: value ? 'black' : palette.text.label,
+              fontWeight: '500',
+
+              [down('md')]: {
+                fontSize: '12px',
+                lineHeight: '20px',
+              },
+            },
+
+            '&:hover': {
+              cursor: 'pointer',
+              borderColor: palette.text.primary,
+
+              '& .MuiInputLabel-root.Mui-focused': {
+                cursor: 'pointer',
+                color: palette.text.primary,
+              },
+
+              '& .MuiInput-root': {
+                color: palette.text.primary,
+              },
+            },
+          },
+        };
       },
-      ownerState,
-    }: OwnerStateWithTheme<TextFieldProps>) => {
-      const value = ownerState.value;
-
-      return {
+    },
+    {
+      props: { variant: 'filled' },
+      style: {
         '&.MuiTextField-root': {
-          borderBottom: '1px solid',
-          borderColor: palette.text.label,
+          borderRadius: '4px',
+          borderTopRightRadius: '0',
+          borderBottomRightRadius: '0',
+          backgroundColor: '#1E1E1E',
 
-          '& .MuiInput-root': {
-            color: palette.text.label,
+          '& .MuiFilledInput-root': {
+            color: 'white',
+
+            input: {
+              padding: '10px',
+
+              '&::placeholder': {
+                fontSize: '11px',
+                lineHeight: '16px',
+              },
+            },
 
             '&::before, &::after': {
               display: 'none',
             },
           },
-
-          '& .MuiInputLabel-root.Mui-focused': {
-            color: value ? 'black' : palette.text.label,
-            fontWeight: '500',
-
-            [down('md')]: {
-              fontSize: '12px',
-              lineHeight: '20px',
-            },
-          },
-
-          '&:hover': {
-            cursor: 'pointer',
-            borderColor: palette.text.primary,
-
-            '& .MuiInputLabel-root.Mui-focused': {
-              cursor: 'pointer',
-              color: palette.text.primary,
-            },
-
-            '& .MuiInput-root': {
-              color: palette.text.primary,
-            },
-          },
         },
-
-        '& .MuiInputLabel-outlined.Mui-focused': {},
-      };
+      },
     },
-  },
+  ],
 };
 
 export default MuiTextField;

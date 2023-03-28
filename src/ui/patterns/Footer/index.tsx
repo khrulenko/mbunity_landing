@@ -15,6 +15,7 @@ import ContactsList from '../../components/ContactsList';
 import LinksList, { LinksListHeader } from '../../components/LinksList';
 import LogoStub from '../../components/LogoStub';
 import { SectionItems } from '../Header';
+import Subscription from '../Subscription';
 import {
   createFooterWrapperStyles,
   createFooterContentWrapperStyles,
@@ -67,6 +68,8 @@ const Footer = () => {
 
           <LinksList header="Quick Links" items={quickLinks} />
         </InnerContentWrapper>
+
+        <Subscription />
       </FooterContentWrapper>
     </FooterWrapper>
   );
