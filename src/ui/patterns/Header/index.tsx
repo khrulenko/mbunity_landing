@@ -104,7 +104,7 @@ const Header = () => {
 
   useEffect(() => {
     setIsHeaderShown(false);
-  }, [location.pathname]);
+  }, [location.pathname, isMobile]);
 
   const toggleHeader = () =>
     setIsHeaderShown((isHeaderShown) => !isHeaderShown);
