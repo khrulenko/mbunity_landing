@@ -1,6 +1,6 @@
 # Khrulenko Vitalii's Mbunity test task
 
-[LINK TO APP PREVIEW](https://khrulenko.github.io/mbunity_landing/)
+[LINK TO APP PREVIEW](https://mbunity-landing.vercel.app/)
 
 ### Project setup
 
