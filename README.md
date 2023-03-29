@@ -2,6 +2,14 @@
 
 [LINK TO APP PREVIEW](https://khrulenko.github.io/mbunity_landing/)
 
+### Project setup
+
+npm install
+
+### Project run
+
+npm start
+
 Used technologies:
 
 - HTML

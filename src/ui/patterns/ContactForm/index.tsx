@@ -15,15 +15,18 @@ import {
   createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
+  createPlaneImageStyles,
 } from './styles';
 import { AnyFunction } from '../../../common/types';
 import RadioController from '../../components/RadioController';
+import image from './letter_send.png';
 
 const FormWrapper = styled(Stack)(createFormWrapperStyles);
 const FieldsWrapper = styled(Stack)(createFieldsWrapperStyles);
 const SelectWrapper = styled(Stack)(createSelectWrapperStyles);
 const RadioHeader = styled(Typography)(createRadioHeaderStyles);
 const RadioGroupWrapper = styled(RadioGroup)(createRadioGroupWrapperStyles);
+const PlaneImage = styled('img')(createPlaneImageStyles);
 
 const REGEXP_TEXT = /^[a-z]{0,30}$/i;
 const REGEXP_PHONE = /^\+?[0-9]{0,12}$/;
@@ -143,7 +146,11 @@ const ContactForm = () => {
         placeholder="Write your message.."
       />
 
-      <Button onClick={onSubmit}>Send Message</Button>
+      <Button onClick={onSubmit}>
+        <span>Send Message</span>
+
+        <PlaneImage src={image} alt="letter_send" />
+      </Button>
     </FormWrapper>
   );
 };

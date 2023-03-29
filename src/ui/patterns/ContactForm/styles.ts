@@ -6,6 +6,7 @@ const createFormWrapperStyles: StyleFunction<StackProps> = ({
     breakpoints: { down },
   },
 }) => ({
+  position: 'relative',
   gap: '45px',
 
   padding: '40px',
@@ -17,7 +18,7 @@ const createFormWrapperStyles: StyleFunction<StackProps> = ({
   [down('md')]: {
     gap: '20px',
 
-    padding: '20px 21px',
+    padding: '20px 21px 64px',
     maxWidth: '491px',
   },
 });
@@ -70,10 +71,31 @@ const createRadioGroupWrapperStyles: StyleFunction<RadioGroupProps> = ({
   },
 });
 
+const createPlaneImageStyles: StyleFunction<{}> = ({
+  theme: {
+    breakpoints: { down },
+  },
+}) => ({
+  position: 'absolute',
+  top: '32px',
+  left: '-70%',
+
+  width: '296px',
+  height: '237px',
+
+  [down('md')]: {
+    left: '0%',
+
+    width: '190px',
+    height: '120px',
+  },
+});
+
 export {
   createFormWrapperStyles,
   createFieldsWrapperStyles,
   createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
+  createPlaneImageStyles,
 };

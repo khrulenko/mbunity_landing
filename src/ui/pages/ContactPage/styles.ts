@@ -66,6 +66,7 @@ const createContentWrapperStyles: StyleFunction<StackProps> = ({
 
   backgroundColor: 'white',
   borderRadius: '10px',
+  overflow: 'hidden',
 
   [down('md')]: {
     flexDirection: 'column',
