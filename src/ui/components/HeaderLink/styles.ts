@@ -1,5 +1,6 @@
 import { LinkProps } from 'react-router-dom';
 import { StyleFunction } from '../../../common/types';
+import { createHoverStyles } from '../../../common/utils';
 
 const createHeaderLinkWrapperStyles: StyleFunction<LinkProps> = ({
   theme: {
@@ -16,19 +17,7 @@ const createHeaderLinkWrapperStyles: StyleFunction<LinkProps> = ({
   textDecoration: 'none',
 
   ':hover': {
-    '::before': {
-      content: "' '",
-
-      position: 'absolute',
-      transform: 'scale(1.2)',
-
-      width: '100%',
-      height: '100%',
-
-      background: 'black',
-      borderRadius: '8px',
-      opacity: '0.1',
-    },
+    ...createHoverStyles(),
   },
 
   [down('md')]: {

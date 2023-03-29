@@ -1,5 +1,6 @@
 import { CollapseProps, StackProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
+import { createHoverStyles } from '../../../common/utils';
 
 const createExpandableListWrapperStyles: StyleFunction<CollapseProps> = () => ({
   width: 'fit-content',
@@ -13,19 +14,7 @@ const createListTriggerStyles: StyleFunction<StackProps> = () => ({
   cursor: 'pointer',
 
   ':hover': {
-    '::before': {
-      content: "' '",
-
-      position: 'absolute',
-      transform: 'scale(1.2)',
-
-      width: '100%',
-      height: '100%',
-
-      background: 'black',
-      borderRadius: '8px',
-      opacity: '0.1',
-    },
+    ...createHoverStyles(),
   },
 });
 
