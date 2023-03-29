@@ -1,44 +1,38 @@
 import { CollapseProps, StackProps } from '@mui/material';
 import { StyleFunction } from '../../../common/types';
 
-const createExpandableListWrapperStyles: StyleFunction<CollapseProps> = () => {
-  return {
-    width: 'fit-content',
-  };
-};
+const createExpandableListWrapperStyles: StyleFunction<CollapseProps> = () => ({
+  width: 'fit-content',
+});
 
-const createListTriggerStyles: StyleFunction<StackProps> = () => {
-  return {
-    position: 'relative',
+const createListTriggerStyles: StyleFunction<StackProps> = () => ({
+  position: 'relative',
 
-    flexDirection: 'row',
+  flexDirection: 'row',
 
-    cursor: 'pointer',
+  cursor: 'pointer',
 
-    ':hover': {
-      '::before': {
-        content: "' '",
+  ':hover': {
+    '::before': {
+      content: "' '",
 
-        position: 'absolute',
-        transform: 'scale(1.2)',
+      position: 'absolute',
+      transform: 'scale(1.2)',
 
-        width: '100%',
-        height: '100%',
+      width: '100%',
+      height: '100%',
 
-        background: 'black',
-        borderRadius: '8px',
-        opacity: '0.1',
-      },
+      background: 'black',
+      borderRadius: '8px',
+      opacity: '0.1',
     },
-  };
-};
+  },
+});
 
-const createCollapsingListStyles: StyleFunction<CollapseProps> = () => {
-  return {
-    position: 'relative',
-    left: '10%',
-  };
-};
+const createCollapsingListStyles: StyleFunction<CollapseProps> = () => ({
+  position: 'relative',
+  left: '10%',
+});
 
 export {
   createExpandableListWrapperStyles,

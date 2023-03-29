@@ -33,7 +33,7 @@ const MuiTextField = {
             },
 
             '& .MuiInputLabel-root.Mui-focused': {
-              color: value ? 'black' : palette.text.label,
+              color: value ? palette.text.primary : palette.text.label,
               fontWeight: '500',
 
               [down('md')]: {

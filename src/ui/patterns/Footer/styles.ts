@@ -3,80 +3,73 @@ import { StyleFunction } from '../../../common/types';
 
 const createFooterWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
+    palette,
     breakpoints: { down },
   },
-}) => {
-  return {
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '45px',
+}) => ({
+  textAlign: 'center',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '45px',
 
-    padding: '80px 80px 36px',
-    width: '100%',
+  padding: '80px 80px 36px',
+  width: '100%',
 
-    color: 'white',
-    backgroundColor: 'black',
+  color: palette.text.light,
+  backgroundColor: 'black',
 
-    [down('lg')]: {
-      gap: '20px',
+  [down('lg')]: {
+    gap: '20px',
 
-      padding: '20px 20px 35px',
-    },
-  };
-};
+    padding: '20px 20px 35px',
+  },
+});
 
 const createFooterContentWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: '20px',
+}) => ({
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  gap: '20px',
 
-    padding: '30px',
-    width: '100%',
+  padding: '30px',
+  width: '100%',
 
-    borderTop: '1px solid',
-    borderColor: 'text.light',
+  borderTop: '1px solid',
+  borderColor: 'text.light',
 
-    [down('md')]: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '40px',
+  [down('md')]: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '40px',
 
-      padding: '30px 0',
-    },
-  };
-};
+    padding: '30px 0',
+  },
+});
 
 const createInnerContentWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    gap: '20px',
+}) => ({
+  flexDirection: 'row',
+  justifyContent: 'space-evenly',
+  gap: '20px',
 
-    width: '100%',
+  width: '100%',
 
-    [down('lg')]: {
-      justifyContent: 'space-between',
-    },
-  };
-};
+  [down('lg')]: {
+    justifyContent: 'space-between',
+  },
+});
 
-const createFooterContactsWrapperStyles: StyleFunction<StackProps> = () => {
-  return {
-    justifyContent: 'start',
-    alignItems: 'start',
-    gap: '20px',
-  };
-};
+const createFooterContactsWrapperStyles: StyleFunction<StackProps> = () => ({
+  justifyContent: 'start',
+  alignItems: 'start',
+  gap: '20px',
+});
 
 export {
   createFooterWrapperStyles,

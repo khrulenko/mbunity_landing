@@ -5,82 +5,74 @@ const createContactPageWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '50px',
+}) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '50px',
 
-    width: '100%',
+  width: '100%',
 
-    [down('md')]: {
-      gap: '20px',
+  [down('md')]: {
+    gap: '20px',
 
-      width: 'fit-content',
-    },
-  };
-};
+    width: 'fit-content',
+  },
+});
 
 const createContactPageHeaderStyles: StyleFunction<TypographyProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    textAlign: 'center',
-    fontSize: '40px',
-    fontWeight: '700',
+}) => ({
+  textAlign: 'center',
+  fontSize: '40px',
+  fontWeight: '700',
 
-    [down('md')]: {
-      fontSize: '24px',
-    },
-  };
-};
+  [down('md')]: {
+    fontSize: '24px',
+  },
+});
 
 const createContactPageDescriptionStyles: StyleFunction<TypographyProps> = ({
   theme: {
     palette,
     breakpoints: { down },
   },
-}) => {
-  return {
-    color: palette.text.secondaryDark,
-    textAlign: 'center',
-    fontWeight: '500',
+}) => ({
+  color: palette.text.secondaryDark,
+  textAlign: 'center',
+  fontWeight: '500',
 
-    [down('md')]: {
-      maxWidth: '184px',
+  [down('md')]: {
+    maxWidth: '184px',
 
-      fontSize: '14px',
-    },
-  };
-};
+    fontSize: '14px',
+  },
+});
 
 const createContentWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '10px',
+}) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '10px',
 
-    padding: '10px',
-    width: '100%',
-    maxWidth: '1196px',
+  padding: '10px',
+  width: '100%',
+  maxWidth: '1196px',
 
-    backgroundColor: 'white',
-    borderRadius: '10px',
+  backgroundColor: 'white',
+  borderRadius: '10px',
 
-    [down('md')]: {
-      flexDirection: 'column',
+  [down('md')]: {
+    flexDirection: 'column',
 
-      padding: '5px',
-    },
-  };
-};
+    padding: '5px',
+  },
+});
 
 export {
   createContactPageWrapperStyles,

@@ -5,17 +5,15 @@ const createIconLinksListWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
   },
-}) => {
-  return {
-    flexDirection: 'row',
-    gap: '24px',
+}) => ({
+  flexDirection: 'row',
+  gap: '24px',
 
-    [down('md')]: {
-      justifyContent: 'center',
+  [down('md')]: {
+    justifyContent: 'center',
 
-      marginTop: 'auto',
-    },
-  };
-};
+    marginTop: 'auto',
+  },
+});
 
 export { createIconLinksListWrapperStyles };

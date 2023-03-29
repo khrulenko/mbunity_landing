@@ -15,9 +15,16 @@ declare module '@mui/material/styles' {
   }
 }
 
+declare module '@mui/material/styles' {
+  interface TypeBackground {
+    secondary: string;
+  }
+}
+
 const palette = {
   background: {
     default: '#FBFBFB',
+    secondary: '#1B1B1B',
   },
   text: {
     primary: '#000000',
