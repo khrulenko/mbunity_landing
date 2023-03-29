@@ -22,13 +22,14 @@ import {
   URL_PROFILE,
   URL_CART,
 } from '../../../routing/URLs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnyFunction } from '../../../common/types';
 import HeaderLink from '../../components/HeaderLink';
 import { ReactComponent as ProfileIcon } from './profile.svg';
 import { ReactComponent as CartIcon } from './cart.svg';
 import { ReactComponent as ProfileLightIcon } from './profile_light.svg';
 import { ReactComponent as CartLightIcon } from './cart_light.svg';
+import { useLocation } from 'react-router-dom';
 
 export interface SectionItem {
   name: string;
@@ -74,11 +75,36 @@ const sections: SectionItems = [
   { name: 'Contact', url: URL_CONTACT },
 ];
 
+const setBodyOverflow = (value: string) => {
+  document.body.style.overflow = value;
+};
+
+const lockScroll = () => {
+  setBodyOverflow('hidden');
+};
+
+const unlockScroll = () => {
+  setBodyOverflow('');
+};
+
 const Header = () => {
   const [isMenuShown, setIsHeaderShown] = useState<boolean>(false);
+  const location = useLocation();
   const isMobile = useMediaQuery(({ breakpoints: { down } }: Theme) =>
     down('md')
   );
+
+  useEffect(() => {
+    if (isMenuShown) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+  }, [isMenuShown]);
+
+  useEffect(() => {
+    setIsHeaderShown(false);
+  }, [location.pathname]);
 
   const toggleHeader = () =>
     setIsHeaderShown((isHeaderShown) => !isHeaderShown);
