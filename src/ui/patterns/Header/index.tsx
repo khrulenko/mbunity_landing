@@ -79,6 +79,8 @@ const setBodyOverflow = (value: string) => {
   document.body.style.overflow = value;
 };
 
+// descr: the lockScroll and unlockScroll functions
+// allow you to lock scrolling when needed
 const lockScroll = () => {
   setBodyOverflow('hidden');
 };
@@ -90,10 +92,14 @@ const unlockScroll = () => {
 const Header = () => {
   const [isMenuShown, setIsHeaderShown] = useState<boolean>(false);
   const location = useLocation();
+  // descr: isMobile allows you to determine whether to apply
+  // styles for the mobile appearance of the application
   const isMobile = useMediaQuery(({ breakpoints: { down } }: Theme) =>
     down('md')
   );
 
+  // descr: this useEffect blocks scrolling if the menu
+  // is open in the mobile version of the application
   useEffect(() => {
     if (isMenuShown) {
       lockScroll();
@@ -102,6 +108,10 @@ const Header = () => {
     }
   }, [isMenuShown]);
 
+  // descr: this useEffect automatically closes the menu
+  // opened on the mobile version if the user taps on
+  // a page other than the current one or if the user switches to
+  // the full-screen version of the application
   useEffect(() => {
     setIsHeaderShown(false);
   }, [location.pathname, isMobile]);

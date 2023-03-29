@@ -1,3 +1,7 @@
+// descr: these styles are placed in a single function
+// because they are used in the ExpandableList and HeaderLink components
+// and should be the same
+
 const createHoverStyles = () => ({
   '::before': {
     content: "' '",

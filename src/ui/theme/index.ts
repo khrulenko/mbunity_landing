@@ -5,6 +5,8 @@ import MuiFormControlLabel from './MuiComponents/MuiFormControlLabel';
 import MuiRadio from './MuiComponents/MuiRadio';
 import MuiButton from './MuiComponents/MuiButton';
 
+// descr: these modules allow you to add
+//custom fields to an existing Material UI theme
 declare module '@mui/material/styles' {
   interface TypeText {
     header: string;

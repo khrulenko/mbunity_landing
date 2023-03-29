@@ -5,6 +5,7 @@ interface LogoStub {
   fontSize?: string;
 }
 
+// descr: this component is used as a stub instead of a logo
 const LogoStub = ({ color = 'text.primary', fontSize = '24px' }) => {
   return (
     <Typography
