@@ -21,6 +21,9 @@ import {
   URL_CONTACT,
   URL_PROFILE,
   URL_CART,
+  URL_FEATURE_ONE,
+  URL_FEATURE_TWO,
+  URL_FEATURE_THREE,
 } from '../../../routing/URLs';
 import { useEffect, useState } from 'react';
 import { AnyFunction } from '../../../common/types';
@@ -61,12 +64,12 @@ const sections: SectionItems = [
   {
     name: 'Features',
     children: [
-      { name: 'One', url: '/one' },
+      { name: 'One', url: URL_FEATURE_ONE },
       {
         name: 'Two',
-        url: '/two',
+        url: URL_FEATURE_TWO,
       },
-      { name: 'Three', url: 'three' },
+      { name: 'Three', url: URL_FEATURE_THREE },
     ],
   },
   { name: 'Blog', url: URL_BLOG },

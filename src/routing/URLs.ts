@@ -15,3 +15,7 @@ export const URL_REFUND_POLICY: string = '/refund_policy';
 export const URL_TECHLABZ_KEYBOX: string = '/techlabz_keybox';
 export const URL_DOWNLOADS: string = '/downloads';
 export const URL_FORUM: string = '/forum';
+
+export const URL_FEATURE_ONE: string = '/features/one';
+export const URL_FEATURE_TWO: string = '/features/two';
+export const URL_FEATURE_THREE: string = '/features/three';
