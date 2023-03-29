@@ -10,7 +10,7 @@ npm install
 
 npm start
 
-Used technologies:
+### Used technologies:
 
 - HTML
 - CSS
