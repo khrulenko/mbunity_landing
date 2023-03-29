@@ -111,6 +111,9 @@ const createIconsWrapperStyles: StyleFunction<StackProps> = ({
     },
 
     [down('md')]: {
+      position: 'fixed',
+      bottom: '28px',
+
       justifyContent: 'center',
       gap: '36px',
 
