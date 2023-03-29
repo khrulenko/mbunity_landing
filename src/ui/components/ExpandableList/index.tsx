@@ -39,8 +39,8 @@ const ExpandableList = ({ name, items }: ExpandableListProps) => {
   }, [location.pathname]);
 
   return (
-    <ExpandableListWrapper>
-      <ListTrigger onClick={onHandleClick} onBlur={() => setIsOpen(false)}>
+    <ExpandableListWrapper tabIndex={0} onBlur={() => setIsOpen(false)}>
+      <ListTrigger onClick={onHandleClick}>
         <span>{isPathInsideList ? <b>{name}</b> : name}</span>
 
         {icon}

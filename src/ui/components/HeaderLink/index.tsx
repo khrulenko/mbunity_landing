@@ -10,7 +10,14 @@ interface HeaderLinProps {
 const HeaderLinkWrapper = styled(Link)(createHeaderLinkWrapperStyles);
 
 const HeaderLink = ({ url, children }: HeaderLinProps) => {
-  return <HeaderLinkWrapper to={url}>{children}</HeaderLinkWrapper>;
+  return (
+    // descr: preventDefault in onMouseDown allows
+    // the link to fire before onBlur fires
+    // on the parent component - ExpandableList
+    <HeaderLinkWrapper to={url} onMouseDown={(e) => e.preventDefault()}>
+      {children}
+    </HeaderLinkWrapper>
+  );
 };
 
 export default HeaderLink;
