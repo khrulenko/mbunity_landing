@@ -71,9 +71,24 @@ const createRadioGroupWrapperStyles: StyleFunction<RadioGroupProps> = ({
   },
 });
 
-const createPlaneImageStyles: StyleFunction<{}> = ({
+const createButtonImageWrapperStyles: StyleFunction<StackProps> = ({
   theme: {
     breakpoints: { down },
+  },
+}) => ({
+  position: 'relative',
+  alignSelf: 'end',
+  width: '100%',
+  maxWidth: '214px',
+
+  [down('md')]: {
+    maxWidth: '100%',
+  },
+});
+
+const createPlaneImageStyles: StyleFunction<{}> = ({
+  theme: {
+    breakpoints: { down, between },
   },
 }) => ({
   position: 'absolute',
@@ -84,7 +99,7 @@ const createPlaneImageStyles: StyleFunction<{}> = ({
   height: '237px',
 
   [down('md')]: {
-    left: '0%',
+    left: '10%',
 
     width: '190px',
     height: '120px',
@@ -97,5 +112,6 @@ export {
   createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
+  createButtonImageWrapperStyles,
   createPlaneImageStyles,
 };

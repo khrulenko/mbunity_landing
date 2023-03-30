@@ -52,6 +52,8 @@ const MuiButton = {
         textTransform: 'capitalize',
         backgroundColor: 'black',
 
+        zIndex: '1',
+
         ':hover': {
           backgroundColor: 'grey',
         },

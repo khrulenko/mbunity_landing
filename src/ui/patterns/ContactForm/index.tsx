@@ -15,6 +15,7 @@ import {
   createSelectWrapperStyles,
   createRadioHeaderStyles,
   createRadioGroupWrapperStyles,
+  createButtonImageWrapperStyles,
   createPlaneImageStyles,
 } from './styles';
 import { AnyFunction } from '../../../common/types';
@@ -26,6 +27,7 @@ const FieldsWrapper = styled(Stack)(createFieldsWrapperStyles);
 const SelectWrapper = styled(Stack)(createSelectWrapperStyles);
 const RadioHeader = styled(Typography)(createRadioHeaderStyles);
 const RadioGroupWrapper = styled(RadioGroup)(createRadioGroupWrapperStyles);
+const ButtonImageWrapper = styled(Stack)(createButtonImageWrapperStyles);
 const PlaneImage = styled('img')(createPlaneImageStyles);
 
 const REGEXP_TEXT = /^[a-z]{0,30}$/i;
@@ -146,11 +148,11 @@ const ContactForm = () => {
         placeholder="Write your message.."
       />
 
-      <Button onClick={onSubmit}>
-        <span>Send Message</span>
+      <ButtonImageWrapper>
+        <Button onClick={onSubmit}>Send Message</Button>
 
         <PlaneImage src={image} alt="letter_send" />
-      </Button>
+      </ButtonImageWrapper>
     </FormWrapper>
   );
 };
